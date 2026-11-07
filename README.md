@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevTask Manager - Next.js 16 (App Router)
 
-## Getting Started
+Plataforma web Full Stack avanzada de gestión de tareas desarrollada bajo la metodología de **Vibe Coding**, implementando Server y Client Components, tipado estricto con TypeScript, diseño moderno con Tailwind CSS y rutas dinámicas avanzadas.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Características Principales
+* **Next.js 16 (App Router):** Estructura moderna basada en directorios optimizada para rendimiento y Server Components.
+* **TypeScript:** Tipado estricto para garantizar robustez y escalabilidad en todo el código.
+* **Tailwind CSS:** Interfaz oscura, minimalista y completamente responsive.
+* **API Interna (Route Handlers):** Endpoints seguros simulando un CRUD completo en memoria.
+* **Resiliencia UI:** Manejo integrado de estados de carga (`loading.tsx`) y errores (`error.tsx`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Estructura de Rutas
+1. **` / `** (Landing Page): Página de bienvenida institucional.
+2. **` /dashboard `** (Dashboard Principal): Panel de control con listado de tareas mediante Server Components.
+3. **` /create `** (Creación): Formulario interactivo con hooks de estado (`useState`) para registrar nuevos requerimientos.
+4. **` /dashboard/[id] `** (Detalle Dinámico): Vista individual de elementos mediante parámetros dinámicos de URL protegidos con límites de suspensión (`Suspense`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Requisitos Previos y Configuración Local
 
-To learn more about Next.js, take a look at the following resources:
+Asegúrate de tener instalado **Node.js** (versión 18 o superior recomendada).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clona el repositorio e ingresa a la carpeta del proyecto:
+   git clone https://github.com/tu-usuario/my-nextjs-app.git
+   cd my-nextjs-app
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Instala las dependencias necesarias:
+   npm install
 
-## Deploy on Vercel
+3. Configura tus variables de entorno creando un archivo `.env` basado en `.env.example`:
+   cp .env.example .env
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Ejecuta el servidor de desarrollo local:
+   npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Abre tu navegador y accede a http://localhost:3000.
+
+---
+
+## ☁️ Despliegue en Producción
+El proyecto está optimizado para ser desplegado instantáneamente en plataformas como **Vercel**:
+* Enlace de Producción en Vercel: https://tu-proyecto.vercel.app
