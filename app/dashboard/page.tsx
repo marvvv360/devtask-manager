@@ -27,7 +27,7 @@ export default async function DashboardPage() {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {tasks.map((task) => (
+          {tasks.map((task: Task) => (
             <div key={task.id} className="bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between hover:border-slate-700 transition">
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
