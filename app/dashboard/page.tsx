@@ -1,17 +1,9 @@
 import Link from 'next/link';
+import { tasks as initialTasks } from '@/lib/tasks';
 import { Task } from '@/types/task';
 
-async function getTasks(): Promise<Task[]> {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/tasks`, {
-    cache: 'no-store',
-  });
-  if (!res.ok) throw new Error('Falló la obtención de tareas');
-  const response = await res.json();
-  return response.data;
-}
-
 export default async function DashboardPage() {
-  const tasks = await getTasks();
+  const tasks: Task[] = initialTasks;
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
