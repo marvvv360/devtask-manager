@@ -1,28 +1,9 @@
 import Link from 'next/link';
+import { getStoredTasks } from '@/lib/tasks';
 import { Task } from '@/types/task';
 
-// Datos locales simulados integrados directamente para evitar dependencias faltantes
-const initialTasks: Task[] = [
-  {
-    id: '1',
-    title: 'Configurar entorno de producción',
-    description: 'Ajustar variables de entorno y verificar la conexión con la base de datos.',
-    priority: 'high',
-    status: 'in_progress',
-    createdAt: '2026-11-07',
-  },
-  {
-    id: '2',
-    title: 'Optimizar rendimiento de componentes',
-    description: 'Revisar Server Components y Client Components para mejorar la carga inicial.',
-    priority: 'medium',
-    status: 'pending',
-    createdAt: '2026-11-06',
-  },
-];
-
 export default async function DashboardPage() {
-  const tasks: Task[] = initialTasks;
+  const tasks: Task[] = getStoredTasks();
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
