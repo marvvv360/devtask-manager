@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getStoredTasks } from '@/lib/tasks';
+import { getStoredTasks } from '@/lib/task';
 import { Task } from '@/types/task';
 
 export default async function DashboardPage() {

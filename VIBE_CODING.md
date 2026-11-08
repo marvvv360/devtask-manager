@@ -11,7 +11,9 @@
 ## 3. Decisiones Técnicas
 - Utilización de **Next.js App Router** por su alto rendimiento y optimización nativa de Server Components.
 - Implementación de **Tailwind CSS** para un diseño moderno, minimalista y completamente responsive.
+- Adopción de una **Capa de Datos Centralizada (`lib/task.ts`)** para asegurar la compatibilidad total con entornos Serverless (como Vercel), evitando peticiones HTTP internas a `localhost` que causaban fallos en tiempo de ejecución.
 
 ## 4. Desafíos y Resolución
-- **Desafío:** Manejo de parámetros dinámicos asíncronos en Next.js.
-- **Solución con IA:** Actualización de la firma de props en los componentes de página dinámicos (`params: Promise<{ id: string }>`) acorde a los estándares de las versiones más recientes de Next.js.
+- **Desafío 1:** Manejo de parámetros dinámicos asíncronos en Next.js.
+- **Desafío 2:** Errores de tiempo de ejecución (Runtime #441) en Vercel derivados de `fetch` internos a `localhost` dentro de Server Components.
+- **Solución con IA:** Actualización de la firma de props en los componentes de página dinámicos (`params: Promise<{ id: string }>`) acorde a los estándares recientes de Next.js, junto con la migración a un repositorio de datos centralizado a nivel de servidor.
